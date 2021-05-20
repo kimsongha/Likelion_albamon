@@ -25,6 +25,7 @@ def detail(request, id):
         'wage' : detail_data.wage, 
         'body' : detail_data.body, 
         'id' : id,
+        'applicant' : detail_data.applicant,
     }
     return render(request, 'detail.html', context)
 
