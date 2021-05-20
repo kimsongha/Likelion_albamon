@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클론_알바몬</title>
+</head>
+<body>
+    <a href="{% url 'main' %}"><h1>알바몬스터 홈</h1></a>
+
+    <h2>상세정보</h2>
+    <p>제목: {{title}}</p>
+    <p>작성자: {{writer}}</p>
+    <p>지역: {{adress}}</p>
+    <p>시급: {{wage}}</p>
+    <p>{{body}}</p>
+    <p>{{pub_date}}</p>
+
+   
+
+    <a href="{% url 'update_page' id %}">수정</a>
+    <a href="{% url 'delete' id %}">삭제</a>
+</body>
+</html>

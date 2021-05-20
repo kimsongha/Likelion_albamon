@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클론_알바몬</title>
+</head>
+<body>
+    <a href="{% url 'main' %}"><h1>알바몬스터 홈</h1></a>
+
+    <h2>알바모집글 수정</h2>
+    <form action="{% url 'update' id %}" method="POST">
+        {% csrf_token %}
+        <p>제목: <input type="text" name="title" value="{{title}}"></p>
+        <p>작성자: <input type="text" name="writer" value="{{writer}}"></p>
+        <p>지역: <input type="text" name="adress" value="{{adress}}"></p>
+        <p>시급: <input type="number" name="wage" value="{{wage}}"></p>
+        <p>본문: <textarea name="body" cols="30" rows="10">{{body}}</textarea></p>
+        <button type="submit">수정완료</button>
+    </form> 
+</body>
+</html>
