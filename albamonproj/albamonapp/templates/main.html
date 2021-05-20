@@ -5,15 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>클론_알바몬</title>
+
+    <style>
+        body{
+            text-align: center;
+            border:2px solid black;
+            
+        }
+        a { 
+            text-decoration:none 
+        } 
+        .container{
+            display: flex;
+        }
+        .box{
+            border: 1px solid black;
+            margin: 10px;
+            padding: 20px;
+        }
+        button{
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head>
 <body>
-    <a href="{% url 'main' %}"><h1>알바몬스터 홈</h1></a>
+    <a href="{% url 'main' %}"><h1>알바몬스터</h1></a>
+    <h2>메인</h2>
+    
+    <div class="container"> 
+        {% for i in albas %}
+        <a href="{% url 'detail' i.id %}">
+            <div class="box">
+                <p>{{i.title}}</p>
+                <p>지원현황: {{i.applicant}}명</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 
-    {% for i in albas %}
-        <p>{{i.title}}</p>
-        <a href="{% url 'detail' i.id %}">more</a>
-    {% endfor %}
     <br><br>
-    <a href="{% url 'create_page' %}">알바모집 글작성</a>
+    <button type="button" onclick="location.href='{% url 'create_page' %}' ">작성하기</button>
 </body>
 </html>

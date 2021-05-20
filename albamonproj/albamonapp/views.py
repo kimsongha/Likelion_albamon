@@ -72,3 +72,14 @@ def delete(request, id):
     delete_data.delete()
     return redirect('main')
 
+def count_plus(request, id):
+    count_data = get_object_or_404(Alba, pk=id)
+    count_data.applicant += 1
+    count_data.save()
+    return redirect('detail', id)
+
+def count_minus(request, id):
+    count_data = get_object_or_404(Alba, pk=id)
+    count_data.applicant -= 1
+    count_data.save()
+    return redirect('detail', id)

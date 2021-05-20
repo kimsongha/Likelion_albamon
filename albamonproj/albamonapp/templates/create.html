@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>클론_알바몬</title>
+
+    <style>
+        body{
+            text-align: center;
+            border:2px solid black;
+            
+        }
+        a { 
+            text-decoration:none 
+        } 
+        button{
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head>
 <body>
-    <a href="{% url 'main' %}"><h1>알바몬스터 홈</h1></a>
+    <a href="{% url 'main' %}"><h1>알바몬스터</h1></a>
 
     <h2>알바모집글 작성</h2>
     <form action="{% url 'create' %}" method="POST">

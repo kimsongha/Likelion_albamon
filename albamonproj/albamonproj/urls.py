@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from albamonapp.views import main, detail ,create_page, create, update_page, update, delete
+from albamonapp.views import main, detail ,create_page, create, update_page, update, delete, count_plus, count_minus
 
 urlpatterns = [   
     path('admin/', admin.site.urls),
@@ -26,5 +26,7 @@ urlpatterns = [
     path('create/', create, name = "create"),
     path('update_page/<int:id>/', update_page, name = "update_page"),
     path('update/<int:id>/', update, name = "update"),
-    path('delete/<int:id>/', delete, name = "delete")
+    path('delete/<int:id>/', delete, name = "delete"),
+    path('count_plus/<int:id>/', count_plus, name = "count_plus"),
+    path('count_minus/<int:id>/', count_minus, name = "count_minus"),
 ]
