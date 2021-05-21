@@ -19,7 +19,8 @@
             display: flex;
         }
         .box{
-            border: 1px solid black;
+            border: 2px solid black;
+            border-radius: 15px;
             margin: 10px;
             padding: 20px;
         }
@@ -31,7 +32,7 @@
 </head>
 <body>
     <a href="{% url 'main' %}"><h1>알바몬스터</h1></a>
-    <h2>메인</h2>
+    <h2>메인</h2><br>
     
     <div class="container"> 
         {% for i in albas %}

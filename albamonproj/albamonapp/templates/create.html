@@ -23,8 +23,8 @@
 </head>
 <body>
     <a href="{% url 'main' %}"><h1>알바몬스터</h1></a>
-
-    <h2>알바모집글 작성</h2>
+    <h2>알바모집글 작성</h2><br>
+    
     <form action="{% url 'create' %}" method="POST">
         {% csrf_token %}
         <p>제목: <input type="text" name="title"></p>
